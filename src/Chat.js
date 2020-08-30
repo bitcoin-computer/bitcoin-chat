@@ -51,12 +51,12 @@ function Chat({ computer }) {
       <div className={classes.root}> 
       <List component="nav" aria-label="main mailbox folders">
         {chat.messages.map(function(message, i){
-          return <ListItemText > {message} </ListItemText>
+          return <ListItemText key={message}> {message} </ListItemText>
         })}
         </List>
       </div>
       <form onSubmit={send}>
-        <TextField placeholder="Type a cool message here...." variant="filled" fullWidth="true" type="string" value={message} onChange={(e) => setMessage(e.target.value)} />
+        <TextField placeholder="Type a cool message here...." variant="filled" fullWidth={true} type="string" value={message} onChange={(e) => setMessage(e.target.value)} />
         <Button variant="contained" align="right" color="primary" type="submit">Send</Button>
       </form>
     </div>

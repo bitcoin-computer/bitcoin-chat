@@ -19,7 +19,7 @@ function StartChat({ computer }) {
     }
 
   }
-  return <div><Button variant="contained" color="secondary" onClick={createChat}>Create Chat</Button></div>
+  return <div><Button fullWidth={true} variant="contained" color="secondary" onClick={createChat}>Create Chat</Button></div>
 }
 
 export default StartChat

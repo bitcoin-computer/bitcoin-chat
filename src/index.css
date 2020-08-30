@@ -12,15 +12,13 @@ code {
     monospace;
 }
 
+.card{
+  padding:4px;
+}
+
 .sidebar {
-  margin: 68px 8px 8px 8px;
   height: calc(100vh - 80px);
-  width: 165px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #fff;
+  background-color: lightgray;
   overflow-x: hidden;
   line-height: 1.5
 }
@@ -70,6 +68,7 @@ input {
 .branding {
   position: absolute;
   bottom: 0;
+  padding: 12px;
 }
 .left{
   float: left;

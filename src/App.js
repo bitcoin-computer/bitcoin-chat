@@ -6,6 +6,19 @@ import Chat from './Chat'
 import SideBar from './SideBar'
 import './App.css'
 import useInterval from './useInterval'
+import { makeStyles } from '@material-ui/core/styles';
+import {Grid} from '@material-ui/core'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
 
 function App() {
   const [computer, setComputer] = useState(null)
@@ -33,18 +46,23 @@ function App() {
     }
     refresh()
   }, 3000)
-
+  const classes = useStyles();
   return (
     <Router>
       <div className="App">
-        <Wallet computer={computer}></Wallet>
-        <SideBar computer={computer} chats={chats}></SideBar>
-
-        <div className="main">
-          <Switch>
-            <Route path="/chat/:id" render={(): object => <Chat computer={computer}></Chat>} />
-          </Switch>
-        </div>
+        <Grid container >
+          <Grid item xs={12}>
+            <Wallet computer={computer}></Wallet>
+          </Grid>
+          <Grid item xs={2}><SideBar computer={computer} chats={chats}></SideBar></Grid>
+          <Grid item xs={10}>
+            <div className="main">
+              <Switch>
+                <Route path="/chat/:id" render={(): object => <Chat computer={computer}></Chat>} />
+              </Switch>
+            </div>
+          </Grid>
+        </Grid>
       </div>
     </Router>
   )
