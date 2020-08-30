@@ -71,3 +71,7 @@ input {
   position: absolute;
   bottom: 0;
 }
+
+.added-class{
+  color: blue;
+}
