@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import ChatSc from './chat-sc'
+import {Button} from '@material-ui/core'
 
 function StartChat({ computer }) {
   const history = useHistory()
@@ -18,7 +19,7 @@ function StartChat({ computer }) {
     }
 
   }
-  return <div><button onClick={createChat}>Create Chat</button></div>
+  return <div><Button variant="contained" color="secondary" onClick={createChat}>Create Chat</Button></div>
 }
 
 export default StartChat

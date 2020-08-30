@@ -71,7 +71,10 @@ input {
   position: absolute;
   bottom: 0;
 }
+.left{
+  float: left;
+}
 
-.added-class{
-  color: blue;
+.pad-left-sm{
+  margin-left:12px;
 }

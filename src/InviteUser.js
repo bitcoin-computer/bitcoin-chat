@@ -1,4 +1,5 @@
 import React from 'react'
+import {Button, Grid} from '@material-ui/core'
 
 function InviteUser({ chat }) {
   const inviteUser = async (e) => {
@@ -10,7 +11,16 @@ function InviteUser({ chat }) {
       console.log(err)
     }
   }
-  return <div><button onClick={inviteUser}>Invite User</button></div>
+  return (
+    <div>
+    <Grid container>
+      <Grid item xs={10}></Grid>
+      <Grid item xs={2}>
+      <Button variant="contained" color="primary" onClick={inviteUser}>Invite User</Button>
+      </Grid>
+    </Grid>
+    </div>
+  )
 }
 
 export default InviteUser
