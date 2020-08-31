@@ -20,7 +20,7 @@ function SideBar({ chats, computer }) {
           <Divider></Divider>
         </ListItem>
       )}
-      
+
     </List>
     
     <div className="branding">
