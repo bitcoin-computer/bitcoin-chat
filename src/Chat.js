@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import InviteUser from './InviteUser'
 import './App.css'
-import {Button, TextField, List, ListItemText} from '@material-ui/core';
+import {Button, TextField, List, Card} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -46,12 +46,12 @@ function Chat({ computer }) {
   }
   const classes = useStyles();
   return(
-    <div>
+    <div fullwidth="true">
       <InviteUser chat={chat}></InviteUser><br />
-      <div className={classes.root}> 
-      <List component="nav" aria-label="main mailbox folders">
+      <div className={classes.root} fullwidth="true" > 
+      <List component="nav" aria-label="main mailbox folders" fullwidth="true">
         {chat.messages.map(function(message, i){
-          return <ListItemText key={message}> {message} </ListItemText>
+          return <Card class='padding-2' fullWidth={true} key={message}> {message} </Card>
         })}
         </List>
       </div>
