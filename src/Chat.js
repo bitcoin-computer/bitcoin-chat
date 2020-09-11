@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import InviteUser from './InviteUser'
-import './App.css'
-
 function Chat({ computer }) {
   const [message, setMessage] = useState('')
   const [chat, setChat] = useState({ messages: [] })

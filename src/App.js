@@ -4,7 +4,6 @@ import Computer from 'bitcoin-computer'
 import Wallet from './Wallet'
 import Chat from './Chat'
 import SideBar from './SideBar'
-import './App.css'
 import useInterval from './useInterval'
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
     // if you are currently logging in
     if (isLoggedIn && !computer){
       setComputer(new Computer({ chain, network: 'testnet', seed: password }))
-      console.log("Bitcoin Computer created on chain: " + chain)
+      console.log("Bitcoin Computer created on chain " + chain)
     // if you are currently logging out
     } else if (!isLoggedIn && computer){
       console.log("You have been logged out")
