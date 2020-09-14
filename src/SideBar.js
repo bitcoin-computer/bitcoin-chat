@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, HashRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import StartChat from './StartChat'
 
 function SideBar({ chats, computer }) {
