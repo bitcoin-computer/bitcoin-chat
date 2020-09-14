@@ -16,7 +16,7 @@ function SideBar({ chats, computer }) {
   }
   return <div className="">
     
-    <div className='card' style={{paddingTop:"6px"}}>
+    <div className='card' style={{padding:"6px"}}>
     <StartChat computer={computer}></StartChat><br />
     <h6 className='text-center'> Chat List </h6>
       <RenderChats />

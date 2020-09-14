@@ -46,23 +46,25 @@ function Chat({ computer }) {
     else { return <span>{chat._id}</span> }
   }
   return <div>
-    <div class="">
+    <div class="card">
       <div class="row">
         <div class="col-sm-0">
         
         </div>
         <div class="col-sm-12">
-          <InviteUser chat={chat}></InviteUser><br />
+          
           <div className='card'>
+            <div className='card-header'>Chat ID <GetChatName /><InviteUser chat={chat}></InviteUser><br /></div>
+            <div className="card-body" style={{maxHeight: "800px", overflowY: "scroll"}}>
             <ul className="list-group">
-              <li  className="list-group-item" >Messages in <GetChatName /></li>
               {chat.messages.map((value, index) => {
                 return <li  className="list-group-item" key={index}>{value}</li>
               })}
             </ul>
+            </div>
           </div>
           <br/>
-          <div class="container">
+          <div class="container ">
           <div class="row">
           <div class="col-sm-12">
             <form onSubmit={send}>
@@ -73,12 +75,15 @@ function Chat({ computer }) {
                 <input type="string" class="form-control" placeholder="Your message...." aria-label="Username" aria-describedby="basic-addon1" value={message} onChange={(e) => setMessage(e.target.value)}/>
               </div>
               <button type="submit" className="btn btn-outline-primary btn-md pull-right"><i class="far fa-paper-plane"></i> Send</button>
+              <br/>
+              <br/>
             </form>
             </div>
           </div>
           </div>
         </div>
       </div>
+      <div className="card-footer"></div>
     </div>
     
     
