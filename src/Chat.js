@@ -45,20 +45,6 @@ function Chat({ computer }) {
     }
     else { return <span>{chat._id}</span> }
   }
-
-  function MessagesList(chat){
-    if(chat.messages && chat.messages.length > 0 )
-    {
-      let message_list = chat.messages.map((value, index) => {
-        return <li  className="list-group-item" key={index}>{value}</li>
-      })
-      return message_list
-    } else {
-      return (<span> Loading....</span>)
-    }
-
-  }
-
   return <div>
     <div class="">
       <div class="row">
