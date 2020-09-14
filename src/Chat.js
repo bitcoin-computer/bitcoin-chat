@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import InviteUser from './InviteUser'
 import './App.css'
-import SideBar from './SideBar'
-import useInterval from './useInterval'
 
 function Chat({ computer }) {
   const [message, setMessage] = useState('')
@@ -15,27 +13,13 @@ function Chat({ computer }) {
 
   useEffect(() => {
     const refreshChat = async () => {
-      if(computer) {
+      if(computer && id) {
         const rev = await computer.getLatestRev(id)
         setChat(await computer.sync(rev))
       }
     }
     refreshChat()
   }, [id, computer, refresh])
-
-  const [chats, setChats] = useState([])
-
-  useInterval(() => {
-    const refresh = async () => {
-      if (computer) {
-        const revs = await computer.getRevs(computer.db.wallet.getPublicKey().toString())
-        setChats(await Promise.all(revs.map(
-          async rev => computer.sync(rev))
-        ))
-      }
-    }
-    refresh()
-  }, 3000)
 
   useEffect(() => {
     setTimeout(() => setRefresh(refresh + 1), 5000)
@@ -54,17 +38,38 @@ function Chat({ computer }) {
     }
   }
 
+  const GetChatName = () => {
+    console.log(chat._id)
+    if (chat._id < 1){
+      return <span> Loading ... </span> 
+    }
+    else { return <span>{chat._id}</span> }
+  }
+
+  function MessagesList(chat){
+    if(chat.messages && chat.messages.length > 0 )
+    {
+      let message_list = chat.messages.map((value, index) => {
+        return <li  className="list-group-item" key={index}>{value}</li>
+      })
+      return message_list
+    } else {
+      return (<span> Loading....</span>)
+    }
+
+  }
+
   return <div>
-    <div class="container">
+    <div class="">
       <div class="row">
-        <div class="col-sm-2">
-        <SideBar computer={computer} chats={chats} ></SideBar>
+        <div class="col-sm-0">
+        
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-12">
           <InviteUser chat={chat}></InviteUser><br />
           <div className='card'>
             <ul className="list-group">
-<li  className="list-group-item" >Messages in {chat._id}</li>
+              <li  className="list-group-item" >Messages in <GetChatName /></li>
               {chat.messages.map((value, index) => {
                 return <li  className="list-group-item" key={index}>{value}</li>
               })}
