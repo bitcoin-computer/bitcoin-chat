@@ -19,7 +19,7 @@ function StartChat({ computer }) {
     }
 
   }
-  return <div><button onClick={createChat}>Create Chat</button></div>
+  return <div><button className="btn btn-small btn-outline-success btn-block" onClick={createChat}>Create Chat</button></div>
 }
 
 export default StartChat

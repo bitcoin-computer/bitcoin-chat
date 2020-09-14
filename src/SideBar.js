@@ -4,10 +4,11 @@ import StartChat from './StartChat'
 
 function SideBar({ chats, computer }) {
 
-  return <div className="sidebar">
+  return <div className="">
     <StartChat computer={computer}></StartChat><br />
+    <h6> Chat List </h6>
     {chats.map(object =>
-      <small key={object._id}><Link to={`/chat/${object._id}`}>{object._id.substr(0, 16)}</Link><br /></small>
+      <small key={object._id}><Link className="btn btn-sm btn-outline-info btn-block" to={`/chat/${object._id}`}>{object._id.substr(0, 16)}</Link><br /></small>
     )}
     <div className="branding">
       <small>This chat runs on the</small><br />

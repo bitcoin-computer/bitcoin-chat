@@ -92,7 +92,7 @@
     padding:40px;
   }
   
-  .textbox{
+  /* .textbox{
     height:50px;
     width:100%;
     border-radius:3px;
@@ -106,7 +106,7 @@
     outline:none;
      border:rgba(24,149,215,1) 2px solid;
      color:rgba(24,149,215,1);
-  }
+  } */
   
   .button{
     height:50px;
@@ -129,13 +129,29 @@
     
   }
 
+  .button-outline{
+    height:50px;
+    width:100%;
+    border-radius:3px;
+    border: 3px solid;
+    box-sizing:border-box;
+    padding:10px;
+    margin-bottom:30px;
+    background: transparent;
+    color:#FFF;
+    font-weight:bold;
+    font-size: 12pt;
+    transition:background .4s;
+    cursor:pointer;
+  }
+
   .margin-auto{
       margin: auto;
   }
 
   .bch-btn{
+    border:green 3px solid;
     background-color: green;
-    color:white;
   }
 
   .bch-btn:hover{
@@ -145,8 +161,8 @@
   }
 
   .bsv-btn{
-    background-color: goldenrod;
-    color:white;
+    border:goldenrod 3px solid;
+    background-color:goldenrod;
   }
 
   .bsv-btn:hover{
@@ -155,10 +171,15 @@
     
   }
 
-  .empty-button{
-      background-color: white;
-      color: black
+  .empty-button-bsv{
+      background-color: lightgrey;
+      color: goldenrod;
   }
+
+  .empty-button-bch{
+    background-color: lightgrey;
+    color: green;
+}
 
   .empty-button:hover{
     background-color: white;
