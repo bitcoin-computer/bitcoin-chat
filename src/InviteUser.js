@@ -10,7 +10,7 @@ function InviteUser({ chat }) {
       console.log(err)
     }
   }
-  return <div className="text-right m-0"><button className='p-0 btn btn-sm btn-outline-primary' onClick={inviteUser}> <i class="fas fa-plus"></i> <i class="fas fa-user"></i> Invite User</button></div>
+  return <div className="text-right m-0"><button className='p-0 btn btn-sm btn-outline-primary' onClick={inviteUser}> <i className="fas fa-plus"></i> <i className="fas fa-user"></i> Invite User</button></div>
 }
 
 export default InviteUser
