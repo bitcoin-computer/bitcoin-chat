@@ -41,54 +41,37 @@ function Chat({ computer }) {
 
   const GetChatName = () => {
     console.log(chat._id)
-    if (chat._id < 1){
+    if (chat._id === null ){
       return <span> Loading ... </span> 
     }
     else { return <span>{chat._id}</span> }
   }
-  return <div>
+  return(
     <div className="card">
-      <div className="row">
-        <div className="col-sm-0">
-        
-        </div>
-        <div className="col-sm-12">
-          
-          <div className='card'>
-            <div className='card-header'>Chat ID <GetChatName /><InviteUser chat={chat}></InviteUser><br /></div>
-            <div className="card-body" style={{maxHeight: "800px", overflowY: "scroll"}}>
-            <ul className="list-group">
-              {chat.messages.map((value, index) => {
-                return <li  className="list-group-item" id={"chat" + index.toString()} key={index}>{EmbedService.ReplaceURL(value, document.getElementById("chat" + index.toString()))}</li>
-              })}
-            </ul>
-            </div>
-          </div>
-          <br/>
-          <div className="container ">
-          <div className="row">
-          <div className="col-sm-12">
-            <form onSubmit={send}>
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1"><i className="fas fa-envelope"></i></span>
-                </div>
-                <input type="string" className="form-control" placeholder="Your message...." aria-label="Username" aria-describedby="basic-addon1" value={message} onChange={(e) => setMessage(e.target.value)}/>
-              </div>
-              <button type="submit" className="btn btn-outline-primary btn-md pull-right"><i className="far fa-paper-plane"></i> Send</button>
-              <br/>
-              <br/>
-            </form>
-            </div>
-          </div>
-          </div>
-        </div>
+      <div className="card-header">
+        Chat ID 
+        <GetChatName /><InviteUser chat={chat}></InviteUser>
       </div>
-      <div className="card-footer"></div>
+      <div className="card-body" style={{maxHeight: "800px", overflowY: "scroll"}}>
+        <ul className="list-group">
+          {chat.messages.map((value, index) => {
+            return <li  className="list-group-item" id={"chat" + index.toString()} key={index}>{EmbedService.ReplaceURL(value, document.getElementById("chat" + index.toString()))}</li>
+          })}
+        </ul>
+      </div>
+      <div className="card-footer">
+        <form onSubmit={send}>
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="basic-addon1"><i className="fas fa-envelope"></i></span>
+            </div>
+            <input type="string" className="form-control" placeholder="Your message...." aria-label="Username" aria-describedby="basic-addon1" value={message} onChange={(e) => setMessage(e.target.value)}/>
+          </div>
+          <button type="submit" className="btn btn-outline-primary btn-md pull-right"><i className="far fa-paper-plane"></i> Send</button>
+          <br/>
+        </form>
+      </div>
     </div>
-    
-    
-  </div>
+   )
 }
-
 export default Chat

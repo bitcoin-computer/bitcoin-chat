@@ -9,21 +9,16 @@ class EmbedService{
             if(urlToTransform && urlToTransform.length > 0){
                 if(urlToTransform[0][0]==="h" && urlToTransform[0][1] === 't'){transformer = urlToTransform[0]}
                 else{transformer  = 'https://' + urlToTransform[0]}
-                console.log(transformer)
+                console.log(`Embedding URL: ${transformer}`)
                 mediaEmbed(transformer, (err, embed) => {
                     
                     if(appendTo && appendTo.childNodes && appendTo.childNodes.length < 2){
-                       console.log(appendTo.childNodes.length)
-                       console.log('has less than 2 children')
+                       console.log('has less than 2 children -- embed has not been inserted in the message view yet.')
                        appendTo.appendChild(document.createElement("br"))
                        appendTo.appendChild(embed)
                     }
-                    
-                    console.log(appendTo)
                 })
-                
             }
-
         }
         catch (err){
             console.log(err)
