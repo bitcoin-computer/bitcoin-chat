@@ -13,8 +13,9 @@ class EmbedService{
                 mediaEmbed(transformer, (err, embed) => {
                     console.log(appendTo.childNodes.length)
                     
-                    if(appendTo.childNodes.length < 2){
+                    if(appendTo && appendTo.childNodes && appendTo.childNodes.length < 2){
                        console.log('has less than 2 children')
+                       appendTo.appendChild(document.createElement("br"))
                        appendTo.appendChild(embed)
                     }
                     
