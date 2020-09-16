@@ -11,9 +11,9 @@ class EmbedService{
                 else{transformer  = 'https://' + urlToTransform[0]}
                 console.log(transformer)
                 mediaEmbed(transformer, (err, embed) => {
-                    console.log(appendTo.childNodes.length)
                     
                     if(appendTo && appendTo.childNodes && appendTo.childNodes.length < 2){
+                       console.log(appendTo.childNodes.length)
                        console.log('has less than 2 children')
                        appendTo.appendChild(document.createElement("br"))
                        appendTo.appendChild(embed)
