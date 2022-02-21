@@ -4,11 +4,8 @@ module.exports = function override(config, env) {
   config.plugins.push(
     new NodePolyfillPlugin({
       excludeAliases: [
-        "assert",
-        "buffer",
         "console",
         "constants",
-        "crypto",
         "domain",
         "events",
         "http",
@@ -17,7 +14,6 @@ module.exports = function override(config, env) {
         "path",
         "punycode",
         "querystring",
-        "stream",
         "_stream_duplex",
         "_stream_passthrough",
         "_stream_transform",
@@ -26,7 +22,6 @@ module.exports = function override(config, env) {
         "sys",
         "timers",
         "tty",
-        "url",
         "util",
         "vm",
         "zlib",
