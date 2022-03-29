@@ -21,13 +21,17 @@ function App() {
     const isLoggedIn = password && chain
 
     // if you are currently logging in
-    if (isLoggedIn && !computer){
-      setComputer(new Computer({ 
-        // To run on regtest, uncomment the following lines:
-        // network: 'regtest', 
+    if (isLoggedIn && !computer) {
+      setComputer(new Computer({
+        seed: password,
+        chain: 'LTC',
+        url: 'https://node.bitcoincomputer.io',
+        network: 'testnet'
+
+        // To run locally on regtest, uncomment the following lines:
         // url: 'http://127.0.0.1:3000',
-        chain, 
-        seed: password }))
+        // network: 'regtest',
+       }))
       console.log("Bitcoin Computer created on chain " + chain)
     // if you are currently logging out
     } else if (!isLoggedIn && computer){
@@ -38,6 +42,7 @@ function App() {
 
   useInterval(() => {
     const refresh = async () => {
+      console.log(computer)
       if (computer) {
         const revs = await computer.getRevs(computer.db.wallet.getPublicKey())
         setChats(await Promise.all(revs.map(
