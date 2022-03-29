@@ -16,7 +16,7 @@ function Chat({ computer }) {
       }
     }
     refreshChat()
-  }, [id, computer, refresh])
+  }, [id, outIndex, computer, refresh])
 
   useEffect(() => {
     setTimeout(() => setRefresh(refresh + 1), 5000)
