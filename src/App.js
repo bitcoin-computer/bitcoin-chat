@@ -22,7 +22,12 @@ function App() {
 
     // if you are currently logging in
     if (isLoggedIn && !computer){
-      setComputer(new Computer({ chain, network: 'testnet', seed: password }))
+      setComputer(new Computer({ 
+        // To run on regtest, uncomment the following lines:
+        // network: 'regtest', 
+        // url: 'http://127.0.0.1:3000',
+        chain, 
+        seed: password }))
       console.log("Bitcoin Computer created on chain " + chain)
     // if you are currently logging out
     } else if (!isLoggedIn && computer){
@@ -34,14 +39,14 @@ function App() {
   useInterval(() => {
     const refresh = async () => {
       if (computer) {
-        const revs = await computer.getRevs(computer.db.wallet.getPublicKey().toString())
+        const revs = await computer.getRevs(computer.db.wallet.getPublicKey())
         setChats(await Promise.all(revs.map(
           async rev => computer.sync(rev))
         ))
       }
     }
     refresh()
-  }, 3000)
+  }, 7000)
 
   return (
     <Router>
