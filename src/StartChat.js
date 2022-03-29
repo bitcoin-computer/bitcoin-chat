@@ -8,7 +8,7 @@ function StartChat({ computer }) {
   const createChat = async (e) => {
     try {
       e.preventDefault()
-      const publicKey = computer.db.wallet.getPublicKey().toString()
+      const publicKey = computer.db.wallet.getPublicKey()
       const ChatSc= await Utils.importFromPublic('/chat-sc.js')
       const chat = await computer.new(ChatSc, [publicKey])
       history.push(`/chat/${chat._id}`)

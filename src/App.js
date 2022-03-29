@@ -62,7 +62,7 @@ function App() {
 
         <div className="main">
           <Switch>
-            <Route path="/chat/:id" render={() => <Chat computer={computer}></Chat>} />
+            <Route path="/chat/:id/:outIndex" render={() => <Chat computer={computer}></Chat>} />
           </Switch>
         </div>
       </div>
