@@ -41,7 +41,7 @@ function Login() {
             <button type="submit" className="button">Login</button>
 
           </form>
-          <div> Need A Seed (Password?) <a _target="blank" href='http://accounts.protoshi.com'>Click Here</a></div>
+          <div> Need A Seed (Password?) <a _target="blank" href='https://iancoleman.io/bip39/'>Click Here</a></div>
           </div>
         </div>
       </div>
