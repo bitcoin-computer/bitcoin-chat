@@ -1,8 +1,8 @@
 # Bitcoin Chat
 
-A hackable chat that runs on the bitcoin blockchain. Intended as a starting point for developers to build on top of.
+A hackable chat that runs on the blockchain. Intended as a starting point for developers to build on top of.
 
-The chat needs no database backend because all data is stored on a Bitcoin blockchain (it currently runs on LTC testnet). The interface between the chat and the blockchain is provided by [Bitcoin Computer](https://bitcoincomputer.io)
+The chat needs no database backend because all data is stored on the blockchain (currently runs on LTC, testnet). The interface between the chat and the blockchain is provided by [Bitcoin Computer](https://bitcoincomputer.io)
 
 ## Start the chat
 
