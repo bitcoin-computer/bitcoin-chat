@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Computer } from 'bitcoin-computer'
+import { Computer } from 'bitcoin-computer-lib'
 import Wallet from './Wallet'
 import Chat from './Chat'
 import SideBar from './SideBar'
@@ -9,7 +9,7 @@ import useInterval from './useInterval'
 function App() {
   const [computer, setComputer] = useState(null)
   const [chats, setChats] = useState([])
-  const [chain, setChain] = useState('BSV')
+  const [chain, setChain] = useState('LTC')
 
   useInterval(() => {
     // the BIP_39_KEY is set on login and we fetch it from local storage
@@ -29,7 +29,7 @@ function App() {
       console.log("You have been logged out")
       setComputer(null)
     }
-  }, 3000)
+  }, 5000)
 
   useInterval(() => {
     const refresh = async () => {
