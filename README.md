@@ -1,18 +1,18 @@
 # Bitcoin Chat
 
-A hackable chat that runs on the bitcoin blockchain. Intended as a starting point for developpers to build on top of.
+A hackable chat that runs on the blockchain. Intended as a starting point for developers to build on top of.
 
-The chat needs no database backend because all data is stored on a Bitcoin blockchain (it currently runs on BSV testnet but we will add support for mainnet and BCH soon). The interface between the chat and the blockchain is provided by [Bitcoin Computer](http://bitcoincomputer.io)
+The chat needs no database backend because all data is stored on the blockchain (currently runs on LTC, testnet). The interface between the chat and the blockchain is provided by [Bitcoin Computer](https://bitcoincomputer.io)
 
 ## Start the chat
 
 Clone the repo and run
 
 ````
-npm run start
+yarn start
 ````
 
-To log into the chat you need a BIP39 seed phrase, for exmple from the [Bitcoin SV Account Generator](http://bsv-account-generator.herokuapp.com/) built by [@DevelopingZack](https://twitter.com/developingzack). You then need to fund the wallet using a [Bitcoin SV faucet](https://faucet.bitcoincloud.net/)
+To log into the chat you need a BIP39 seed phrase. You can generate a new seed for example from [here](https://iancoleman.io/bip39/). You then need to fund the wallet using a [LTC faucet](https://testnet-faucet.com/ltc-testnet/)
 
 For more information see the [Bitcoin Computer Docs](https://docs.bitcoincomputer.io/getting-started/run-in-a-browser) or ask in the [Telegram Group](https://t.me/joinchat/FMrjOUWRuUkNuIt7zJL8tg).
 

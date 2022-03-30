@@ -12,7 +12,6 @@ function StartChat({ computer }) {
       const ChatSc= await Utils.importFromPublic('/chat-sc.js')
       const chat = await computer.new(ChatSc, [publicKey])
       history.push(`/chat/${chat._id}`)
-      console.log('Created chat with id', chat._id)
     } catch (err) {
       if(err.message.startsWith('Insufficient balance in address'))
         alert('You have to fund your wallet https://faucet.bitcoincloud.net/')
