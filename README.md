@@ -2,23 +2,23 @@
 
 A hackable chat that runs on the blockchain. Intended as a starting point for developers to build on top of.
 
-The chat needs no database backend because all data is stored on the blockchain (currently runs on LTC, testnet). The interface between the chat and the blockchain is provided by [Bitcoin Computer](https://bitcoincomputer.io)
+The chat does not need database backend because all data is stored on the blockchain (currently runs on LTC, testnet). The interface between the chat and the blockchain is provided by [Bitcoin Computer](https://bitcoincomputer.io).
 
 ## Start the chat
 
-Clone the repo and run
+Clone the repo, and run
 
 ````
 yarn start
 ````
 
-To log into the chat you need a BIP39 seed phrase. You can generate a new seed for example from [here](https://iancoleman.io/bip39/). You then need to fund the wallet using a [LTC faucet](https://testnet-faucet.com/ltc-testnet/)
+To log into the chat, you need a BIP39 seed phrase. You can generate a new seed, for example, from [here](https://iancoleman.io/bip39/). You then need to fund the wallet using a [LTC faucet](https://testnet-faucet.com/ltc-testnet/).
 
-For more information see the [Bitcoin Computer Docs](https://docs.bitcoincomputer.io/getting-started/run-in-a-browser) or ask in the [Telegram Group](https://t.me/joinchat/FMrjOUWRuUkNuIt7zJL8tg).
+For more information, see the [Bitcoin Computer Docs](https://docs.bitcoincomputer.io/getting-started/run-in-a-browser), or ask in the [Telegram Group](https://t.me/joinchat/FMrjOUWRuUkNuIt7zJL8tg).
 
 ## Contributing
 
-The chat is very bare bones and contributions are more than welcome. Have a look at the open issues, or make a pull request with a new feature. You can also request a feature request by creating an issue.
+The chat is very bare bones, and contributions are more than welcome. Have a look at the open issues, or make a pull request with a new feature. You can also make a feature request by creating an issue.
 
 ## Screenshots
 
